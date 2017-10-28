@@ -1,0 +1,25 @@
+<br/>
+<div id="viewTask">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Task</th>
+                <th scope="col">Create Date</th>
+                <th scope="col">Update Date</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let eachData of allTask">
+                <td>{{$index}}</td>
+                <td>{{eachData.taskMessage}}</td>
+                <td>{{eachData.createdAt | date}}</td>
+                <td>{{eachData.updatedAt | date}}</td>
+                <th><button type="button" class="btn btn-primary btn-sm" (click)="editTask(eachData.id)">Edit</button></th>
+                <th><button type="button" class="btn btn-danger btn-sm" (click)="deleteTask(eachData.id)">Delete</button></th>
+            </tr>
+        </tbody>
+    </table>
+      </div>

@@ -1,0 +1,19 @@
+<br/>
+<div id="createTask">
+    <div class="card">
+        <div class="card-header">
+            <span [hidden]="editMode">Add Task</span>
+            <span [hidden]="!editMode">Edit Task</span>
+        </div>
+        <div class="card-body">
+            <form name="taskCreateForm">
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">What do you want to do </label>
+                    <textarea class="form-control" [(ngModel)]="task.taskMessage" rows="3" name="taskMessage"></textarea>
+                </div>
+                <button type="button" (click)="createTask(task)" [hidden]="editMode" class="btn btn-primary">Submit</button>
+                <button type="button" (click)="updateTask(task)" [hidden]="!editMode" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </div>
+  </div>
